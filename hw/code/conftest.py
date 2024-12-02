@@ -10,7 +10,7 @@ def pytest_addoption(parser):
     parser.addoption('--vnc', action='store_true')
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='function')
 def config(request):
     browser = request.config.getoption('--browser')
     url = request.config.getoption('--url')

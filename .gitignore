@@ -1,0 +1,11 @@
+**/.env
+**/*.json
+**/__pycache__
+**/.pytest_cache
+**/venv
+**/.vscode
+**/tmp
+**/*.env
+**/*.png
+**/.DS_Store
+**/screenshots

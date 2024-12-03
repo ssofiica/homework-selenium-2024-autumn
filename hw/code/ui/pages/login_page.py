@@ -1,7 +1,8 @@
-from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support.ui import WebDriverWait
+import time
 from selenium.webdriver.support import expected_conditions as EC
 from ui.pages.base_page import BasePage
-from ui.pages.main_page import MainPage
+from ui.pages.audience import AudiencePage
 from ui.locators.login import LoginLocators
 from ui.pages.consts import URLs
 
@@ -9,10 +10,6 @@ from ui.pages.consts import URLs
 class LoginPage(BasePage):
     locators = LoginLocators()
     url = URLs.login
-    authorize = False
-
-    # def __init__(self, set_driver):
-    #     self.driver = set_driver
 
     def open(self):
         self.driver.get(self.url)
@@ -26,9 +23,9 @@ class LoginPage(BasePage):
         self.fill(self.locators.MAIL_PASSWORD_INPUT, password)
         self.click(self.locators.SUBMUT_BUTTON)
         self.click(self.locators.CAPTCHA_BUTTON)
+        time.sleep(20)
         self.fill(self.locators.MAIL_PASSWORD_INPUT, password)
-        # self.click(self.locators.CAPTCHA_CLICK)
         self.click(self.locators.SUBMUT_BUTTON)
 
-        return MainPage(self.driver)
+        return AudiencePage(self.driver)
         

@@ -38,7 +38,12 @@ class BasePage:
         return WebDriverWait(self.driver, timeout=timeout)
     
     def find(self, locator, timeout=10):
-        return self.wait(timeout).until(EC.presence_of_element_located(locator))
+        try:
+            return self.wait(timeout).until(EC.presence_of_element_located(locator))
+        except Exception as e:
+            print(f"Error finding element with locator {locator}: {e}")
+            raise
+    
         
     def click(self, locator, timeout=None) -> WebElement:
         self.find(locator, timeout=timeout)
@@ -49,8 +54,12 @@ class BasePage:
         elem = self.find(locator, timeout)
         elem.clear()
         elem.send_keys(text)
-        return elem
-    
+        return elem 
+
     def find_text(self, text):
         elem = self.wait(10).until(EC.presence_of_element_located((By.XPATH, f"//*[contains(text(), '{text}')]")))
         return elem
+    
+    def find_elements(self, locator, timeout=None) -> List[WebElement]:
+        elements = self.wait(timeout).until(EC.presence_of_all_elements_located(locator))
+        return elements

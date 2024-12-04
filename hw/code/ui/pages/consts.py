@@ -3,3 +3,4 @@ class URLs:
     leadform = "https://ads.vk.com/hq/leadads/leadforms"
     base = "https://ads.vk.com"
     login = "https://ads.vk.com/hq"
+    campaign = "https://ads.vk.com/hq/dashboard"

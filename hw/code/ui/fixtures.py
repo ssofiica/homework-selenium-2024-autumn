@@ -4,6 +4,7 @@ import os
 from selenium import webdriver
 import undetected_chromedriver as uc
 from ui.pages.audience import AudiencePage
+from ui.pages.campaign import CampaignPage
 from webdriver_manager.chrome import ChromeDriverManager
 
 USER_DATA_DIR = '/Users/svalo/AppData/Local/Google/Chrome/'
@@ -33,3 +34,7 @@ def audience_page(driver):
     driver.get("https://ads.vk.com/hq/audience")
     return AudiencePage(driver)
 
+@pytest.fixture
+def campaign_page(driver):
+    driver.get("https://ads.vk.com/hq/dashboard")
+    return CampaignPage(driver)

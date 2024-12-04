@@ -10,6 +10,7 @@ class AudienceLocators(BasePageLocators):
     KEY_PHRASE_INPUT = (By.XPATH, '//textarea[@placeholder="Введите фразу и нажмите Enter"]')
     TEN_SAME_BUTTON = (By.XPATH, '//*[contains(text(), "Показать 10 похожих")]')
     KEY_SUGGEST = (By.CLASS_NAME, 'KeyPhrasesSuggesions_suggestionItem__zO7rL')
-    SUBMUT_BUTTON = (By.XPATH, '//button[@data-test-id="submit"]') 
+    SUBMUT_BUTTON = (By.XPATH, '//button[@data-testid="submit"]') 
+    SAVED_SOURCE_PARAMETRS= (By.CLASS_NAME, 'InfoRow_content__LN5Bb')
 
     

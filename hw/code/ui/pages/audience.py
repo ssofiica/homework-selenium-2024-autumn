@@ -32,20 +32,21 @@ class AudiencePage(BasePage):
         self.click(self.locators.TEN_SAME_BUTTON)
         time.sleep(3)
         items = self.find_elements(self.locators.KEY_SUGGEST)
-        print(type(items), len(items))
-        # if items:
-        #     print(type(items))
-        #     # items[0].click()
-        #     # value = items[0].get_attribute("data-suggest")
-        #     # print(value)
-        #     # return value
-        # else:
-        #     print("Элементы не найдены.")
+        if items:
+            v = items[0]
+            value = v.get_attribute("data-suggest")
+            v.click()
+            time.sleep(4)
+            return value
+        else:
+            print("Элементы не найдены.")
 
-    def get_key_values(self):
-        textarea = self.find(self.locators.KEY_PHRASE_INPUT)
-        value = textarea.get_attribute("value")
-        return value
+    def get_source_parameters(self):
+        elements = self.find_elements(self.locators.SAVED_SOURCE_PARAMETRS)
+        params = elements[0]
+        keys = params.split(' • ')
+        period = elements[1].text
+        return (keys, period)
     
     def save(self):
         self.click(self.locators.SUBMUT_BUTTON, 50)

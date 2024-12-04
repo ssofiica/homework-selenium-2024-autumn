@@ -15,7 +15,8 @@ class BaseCase:
     def setup(self, driver, config, request: FixtureRequest):
         self.driver = driver
         self.config = config
-        self.login_page = LoginPage(driver)
-        user, password = request.getfixturevalue('credentials')
-        self.login_page.open()
-        self.login_page.login(user, password)
+        # self.login_page = LoginPage(driver)
+        # user, password = request.getfixturevalue('credentials')
+        # self.login_page.open()
+        # self.login_page.login(user, password)
+        return AudiencePage(self.driver)

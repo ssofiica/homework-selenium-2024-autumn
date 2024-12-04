@@ -1,5 +1,6 @@
 import pytest
 import os
+from ui.pages.consts import URLs
 # from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
 import undetected_chromedriver as uc
@@ -20,7 +21,7 @@ def driver(config):
     options.add_argument(f'--user-data-dir={USER_DATA_DIR}')
     options.add_argument(f'--user-agent={USER_AGENT}')
     options.add_argument('--profile-directory=Default')
-    driver = uc.Chrome(options=options)
+    driver = uc.Chrome(options=options, port=0)
     driver.get(url)
     yield driver
     driver.quit()
@@ -31,10 +32,10 @@ def credentials():
 
 @pytest.fixture
 def audience_page(driver):
-    driver.get("https://ads.vk.com/hq/audience")
+    driver.get(URLs.audience)
     return AudiencePage(driver)
 
 @pytest.fixture
 def campaign_page(driver):
-    driver.get("https://ads.vk.com/hq/dashboard")
+    driver.get(URLs.campaign)
     return CampaignPage(driver)

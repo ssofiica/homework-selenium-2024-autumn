@@ -63,3 +63,4 @@ class BasePage:
     def find_elements(self, locator, timeout=None) -> List[WebElement]:
         elements = self.wait(timeout).until(EC.presence_of_all_elements_located(locator))
         return elements
+    

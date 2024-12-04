@@ -12,5 +12,3 @@ class AudienceLocators(BasePageLocators):
     KEY_SUGGEST = (By.CLASS_NAME, 'KeyPhrasesSuggesions_suggestionItem__zO7rL')
     SUBMUT_BUTTON = (By.XPATH, '//button[@data-testid="submit"]') 
     SAVED_SOURCE_PARAMETRS= (By.CLASS_NAME, 'InfoRow_content__LN5Bb')
-
-    

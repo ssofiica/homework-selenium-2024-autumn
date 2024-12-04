@@ -15,3 +15,4 @@ class MainPage(BasePage):
     # def go_to_company_page(self):
     #     # self.click(self.locators.PEOPLE_PAGE_LINK)
     #     return CompanyPage(self.driver)
+    

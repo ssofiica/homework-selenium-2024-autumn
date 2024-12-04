@@ -50,3 +50,4 @@ class AudiencePage(BasePage):
     
     def save(self):
         self.click(self.locators.SUBMUT_BUTTON, 50)
+        

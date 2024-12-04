@@ -41,5 +41,4 @@ class CampaignPage(BasePage):
 
     def is_draft_saved(self):
         return self.find(self.locators.CHANGES_SAVED, 30)
-
     

@@ -9,7 +9,6 @@ from dotenv import load_dotenv, dotenv_values
 load_dotenv()
 
 class BaseCase:
-    # authorize = False
 
     @pytest.fixture(scope='function', autouse=True)
     def setup(self, driver, config, request: FixtureRequest):
@@ -20,3 +19,4 @@ class BaseCase:
         # self.login_page.open()
         # self.login_page.login(user, password)
         return AudiencePage(self.driver)
+    

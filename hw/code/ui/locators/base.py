@@ -5,3 +5,4 @@ class BasePageLocators:
         By.XPATH,
         f"//*[contains(text(), '{text}')]",
     )
+    

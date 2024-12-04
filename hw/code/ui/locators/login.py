@@ -10,3 +10,4 @@ class LoginLocators(BasePageLocators):
     MAIL_PASSWORD_INPUT = (By.NAME, 'password')
     SUBMUT_BUTTON = (By.XPATH, '//button[@data-test-id="submit-button"]') 
     CAPTCHA_BUTTON = (By.XPATH, '//button[@data-test-id="recaptcha-inter-next"]')
+    

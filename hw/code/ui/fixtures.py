@@ -6,6 +6,7 @@ from selenium import webdriver
 import undetected_chromedriver as uc
 from ui.pages.audience import AudiencePage
 from ui.pages.campaign import CampaignPage
+from ui.pages.leadfom import LeadformPage
 from webdriver_manager.chrome import ChromeDriverManager
 
 USER_DATA_DIR = '/Users/svalo/AppData/Local/Google/Chrome/'
@@ -39,3 +40,8 @@ def audience_page(driver):
 def campaign_page(driver):
     driver.get(URLs.campaign)
     return CampaignPage(driver)
+
+@pytest.fixture
+def leadform_page(driver):
+    driver.get(URLs.leadform)
+    return LeadformPage(driver)

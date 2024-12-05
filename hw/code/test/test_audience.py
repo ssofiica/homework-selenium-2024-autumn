@@ -1,5 +1,3 @@
-import time
-import pytest
 from test.base import BaseCase
 from ui.pages.audience import AudiencePage
 

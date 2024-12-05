@@ -19,7 +19,6 @@ class AudiencePage(BasePage):
     def add_period(self, text):
         self.click(self.locators.KEY_PHRASE_BUTTON, 50)
         self.fill(self.locators.PERIOD_INPUT, text, 50)
-        time.sleep(3)
 
     def enter_text(self, text):
         self.fill(self.locators.CREATION_NAME_AUDITORY, text)
@@ -36,7 +35,6 @@ class AudiencePage(BasePage):
             v = items[0]
             value = v.get_attribute("data-suggest")
             v.click()
-            time.sleep(4)
             return value
         else:
             print("Элементы не найдены.")
@@ -50,4 +48,3 @@ class AudiencePage(BasePage):
     
     def save(self):
         self.click(self.locators.SUBMUT_BUTTON, 50)
-        

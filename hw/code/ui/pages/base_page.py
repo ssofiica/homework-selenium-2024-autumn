@@ -37,13 +37,14 @@ class BasePage:
 
         return WebDriverWait(self.driver, timeout=timeout)
     
-    def find(self, locator, timeout=10):
+    def find(self, locator, timeout=20):
         try:
             return self.wait(timeout).until(EC.presence_of_element_located(locator))
+        except TimeoutException:
+            return False
         except Exception as e:
             print(f"Error finding element with locator {locator}: {e}")
             raise
-    
         
     def click(self, locator, timeout=None) -> WebElement:
         self.find(locator, timeout=timeout)
@@ -52,6 +53,8 @@ class BasePage:
 
     def fill(self, locator, text, timeout=None) -> WebElement:
         elem = self.find(locator, timeout)
+        # if not elem: 
+        #     return
         elem.clear()
         elem.send_keys(text)
         return elem 

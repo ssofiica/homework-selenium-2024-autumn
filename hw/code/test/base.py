@@ -2,6 +2,7 @@ import pytest
 import os
 from _pytest.fixtures import FixtureRequest
 from ui.pages.base_page import BasePage
+from ui.pages.consts import URLs
 from ui.pages.audience import AudiencePage
 from ui.pages.login_page import LoginPage
 from dotenv import load_dotenv, dotenv_values
@@ -16,7 +17,6 @@ class BaseCase:
         self.config = config
         # self.login_page = LoginPage(driver)
         # user, password = request.getfixturevalue('credentials')
-        # self.login_page.open()
+        # self.driver.get(URLs.login)
         # self.login_page.login(user, password)
-        return AudiencePage(self.driver)
     

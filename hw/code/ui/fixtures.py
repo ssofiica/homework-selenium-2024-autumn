@@ -9,6 +9,7 @@ from ui.pages.login_page import LoginPage
 from ui.pages.campaign import CampaignPage
 from ui.pages.leadfom import LeadformPage
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 
 USER_DATA_DIR = '/Users/svalo/AppData/Local/Google/Chrome/'
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
@@ -17,7 +18,9 @@ USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
 @pytest.fixture(scope='function', autouse=True)
 def driver(config):
     url = config['url']
-    driver = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.add_argument("--log-level=3")
+    driver = webdriver.Chrome(options=chrome_options)
     #options = uc.ChromeOptions()
     #options = webdriver.ChromeOptions()
     # options.add_argument(f'--user-data-dir={USER_DATA_DIR}')

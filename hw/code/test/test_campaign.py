@@ -19,6 +19,7 @@ class TestCampaign(BaseCase):
 
     # # ok
     def test_small_budget(self, campaign_page: CampaignPage):
+        campaign_page.close_modal()
         campaign_page.click_campaign_creation()
         campaign_page.add_site(LINK)
         campaign_page.enter_budget(TOO_SMALL_BUDGET)
@@ -27,6 +28,7 @@ class TestCampaign(BaseCase):
     
     # # ok
     def test_big_budget(self, campaign_page: CampaignPage):
+        campaign_page.close_modal()
         campaign_page.click_campaign_creation()
         campaign_page.add_site(LINK)
         el = campaign_page.enter_budget(TOO_BIG_BUDGET)
@@ -35,6 +37,7 @@ class TestCampaign(BaseCase):
 
     # # ok
     def test_save_campaign(self, campaign_page: CampaignPage):
+        campaign_page.close_modal()
         campaign_page.click_campaign_creation()
         #campaign_page.open_app()
         campaign_page.add_site(LINK)
@@ -45,6 +48,7 @@ class TestCampaign(BaseCase):
     
     # #ok
     def test_check_saved_draft(self, campaign_page: CampaignPage):
+        campaign_page.close_modal()
         campaign_page.select_drafts()
         today = datetime.date.today()
         formatted_date = today.strftime("%Y-%m-%d")
@@ -54,6 +58,7 @@ class TestCampaign(BaseCase):
 
     # ok
     def test_delete_draft(self, campaign_page: CampaignPage):
+        campaign_page.close_modal()
         today = datetime.date.today()
         formatted_date = today.strftime("%Y-%m-%d")
         name = NAME + formatted_date

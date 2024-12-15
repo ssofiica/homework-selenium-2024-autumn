@@ -4,6 +4,7 @@ from ui.locators.base import BasePageLocators
 class CampaignLocators(BasePageLocators):
     TAB_CAMPAIGN = (By.XPATH, '//*[@data-route="dashboardV2"]')
     CREATE_BUTTON = (By.XPATH, '//a[@data-testid="create-button"]')
+    CLOSE_MODAL_BUTTON = (By.XPATH, '//div[@aria-label="Закрыть"]')
 
     CREATE_MOBAPP = (By.XPATH, '//div[@data-id="mobapps"]') #создание кампании для приложения
     CREATE_SITE = (By.XPATH, '//div[@data-id="site_conversions"]') #создание кампании для сайта

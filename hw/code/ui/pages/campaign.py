@@ -17,6 +17,10 @@ class CampaignPage(BasePage):
     def open(self):
         self.click(self.locators.TAB_CAMPAIGN, 10)
 
+    def close_modal(self):
+        if self.find(self.locators.CLOSE_MODAL_BUTTON, 100):
+            self.click(self.locators.CLOSE_MODAL_BUTTON, 100)
+
     def click_campaign_creation(self):
         self.click(self.locators.CREATE_BUTTON, 1000)
 
@@ -41,7 +45,7 @@ class CampaignPage(BasePage):
         return self.fill(self.locators.BUDGET_INPUT, value, 50)
 
     def click_enter(self):
-        self.click(self.locators.CONTINUE_BUTTON, 1000)
+        self.click(self.locators.CONTINUE_BUTTON, 100)
 
     def click_save_draft(self):
         self.click(self.locators.SAVE_DRAFT_BUTTON, 1000)

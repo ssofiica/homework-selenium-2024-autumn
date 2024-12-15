@@ -1,4 +1,3 @@
-import time
 from ui.pages.base_page import BasePage
 from ui.pages.consts import URLs
 from selenium.webdriver.common.keys import Keys

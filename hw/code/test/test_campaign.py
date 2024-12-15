@@ -5,8 +5,6 @@ from test.base import BaseCase
 from ui.pages.campaign import CampaignPage
 from ui.locators.campaign import CampaignLocators
 
-PERIOD = "5"
-KEY_PHRASE = "собака"
 TOO_SMALL_BUDGET = "50"
 TOO_BIG_BUDGET = "10000000000000"
 NORM_BUDGET = "2000"

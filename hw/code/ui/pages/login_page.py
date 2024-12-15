@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from ui.pages.base_page import BasePage
 from ui.pages.audience import AudiencePage
 from ui.pages.campaign import CampaignPage
+from ui.pages.leadfom import LeadformPage
 from ui.locators.login import LoginLocators
 from ui.pages.consts import URLs
 
@@ -25,7 +26,6 @@ class LoginPage(BasePage):
         self.click(self.locators.OTHER_WAY)
         self.click(self.locators.PASSWORD_WAY)
         self.fill(self.locators.MAIL_PASSWORD_INPUT, password)
-        #time.sleep(5)
         self.click(self.locators.SUBMUT_BUTTON)
         # if self.find(self.locators.CAPTCHA_BUTTON, 10):
         #     self.click(self.locators.CAPTCHA_BUTTON)
@@ -33,9 +33,10 @@ class LoginPage(BasePage):
         # self.fill(self.locators.MAIL_PASSWORD_INPUT, password)
         # if self.find(self.locators.SUBMUT_BUTTON, 10):
         #     self.click(self.locators.SUBMUT_BUTTON)
-
         if type == 'a':
             return AudiencePage(self.driver)
         if type == 'c':
             return CampaignPage(self.driver)
+        if type == 'l':
+            return LeadformPage(self.driver)
         

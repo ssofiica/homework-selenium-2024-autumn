@@ -1,12 +1,8 @@
 import pytest
 import os
 from ui.pages.consts import URLs
-# from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
-import undetected_chromedriver as uc
-from ui.pages.audience import AudiencePage
 from ui.pages.login_page import LoginPage
-from ui.pages.campaign import CampaignPage
 from ui.pages.leadfom import LeadformPage
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -34,11 +30,6 @@ def driver(config):
 @pytest.fixture()
 def credentials():
     return (os.getenv("LOGIN"), os.getenv("PASSWORD"))
-
-# @pytest.fixture
-# def audience_page(driver):
-#     driver.get(URLs.audience)
-#     return AudiencePage(driver)
 
 @pytest.fixture
 def leadform_page(driver):

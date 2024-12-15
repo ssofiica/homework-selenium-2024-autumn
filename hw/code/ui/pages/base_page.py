@@ -29,11 +29,10 @@ class BasePage:
 
     def __init__(self, driver):
         self.driver = driver
-        # self.is_opened()
 
     def wait(self, timeout=None):
         if timeout is None:
-            timeout = 20
+            timeout = 50
 
         return WebDriverWait(self.driver, timeout=timeout)
     

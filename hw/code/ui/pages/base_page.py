@@ -52,8 +52,6 @@ class BasePage:
 
     def fill(self, locator, text, timeout=None) -> WebElement:
         elem = self.find(locator, timeout)
-        # if not elem: 
-        #     return
         elem.clear()
         elem.send_keys(text)
         return elem 

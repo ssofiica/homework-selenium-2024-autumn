@@ -1,15 +1,8 @@
 import pytest
 import os
-from ui.pages.consts import URLs
 from selenium import webdriver
 from ui.pages.login_page import LoginPage
-from ui.pages.leadfom import LeadformPage
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
-
-USER_DATA_DIR = '/Users/svalo/AppData/Local/Google/Chrome/'
-USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
-
 
 @pytest.fixture(scope='function', autouse=True)
 def driver(config):
@@ -17,12 +10,6 @@ def driver(config):
     chrome_options = Options()
     chrome_options.add_argument("--log-level=3")
     driver = webdriver.Chrome(options=chrome_options)
-    #options = uc.ChromeOptions()
-    #options = webdriver.ChromeOptions()
-    # options.add_argument(f'--user-data-dir={USER_DATA_DIR}')
-    # options.add_argument(f'--user-agent={USER_AGENT}')
-    # options.add_argument('--profile-directory=Default')
-    # driver = uc.Chrome(options=options, port=0)
     driver.get(url)
     yield driver
     driver.quit()
@@ -30,11 +17,6 @@ def driver(config):
 @pytest.fixture()
 def credentials():
     return (os.getenv("LOGIN"), os.getenv("PASSWORD"))
-
-@pytest.fixture
-def leadform_page(driver):
-    driver.get(URLs.leadform)
-    return LeadformPage(driver)
 
 @pytest.fixture
 def login_page(driver):
@@ -50,5 +32,11 @@ def audience_page(login_page: LoginPage, credentials):
 @pytest.fixture
 def campaign_page(login_page: LoginPage, credentials):
     page = login_page.login(credentials[0],credentials[1], 'c')
+    page.open()
+    return page
+
+@pytest.fixture
+def leadform_page(login_page: LoginPage, credentials):
+    page = login_page.login(credentials[0],credentials[1], 'l')
     page.open()
     return page

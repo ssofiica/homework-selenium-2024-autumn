@@ -1,5 +1,3 @@
-# from selenium.webdriver.support.ui import WebDriverWait
-import time
 from selenium.webdriver.support import expected_conditions as EC
 from ui.pages.base_page import BasePage
 from ui.pages.audience import AudiencePage
@@ -27,12 +25,6 @@ class LoginPage(BasePage):
         self.click(self.locators.PASSWORD_WAY)
         self.fill(self.locators.MAIL_PASSWORD_INPUT, password)
         self.click(self.locators.SUBMUT_BUTTON)
-        # if self.find(self.locators.CAPTCHA_BUTTON, 10):
-        #     self.click(self.locators.CAPTCHA_BUTTON)
-        # #time.sleep(20)
-        # self.fill(self.locators.MAIL_PASSWORD_INPUT, password)
-        # if self.find(self.locators.SUBMUT_BUTTON, 10):
-        #     self.click(self.locators.SUBMUT_BUTTON)
         if type == 'a':
             return AudiencePage(self.driver)
         if type == 'c':

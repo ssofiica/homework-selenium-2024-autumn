@@ -37,6 +37,6 @@ def campaign_page(login_page: LoginPage, credentials):
 
 @pytest.fixture
 def leadform_page(login_page: LoginPage, credentials):
-    page = login_page.login(credentials[0],credentials[1], 'l')
+    page = login_page.login(credentials[0], credentials[1], 'l')
     page.open()
     return page

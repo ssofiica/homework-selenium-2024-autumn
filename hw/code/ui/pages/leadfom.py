@@ -126,3 +126,4 @@ class LeadformPage(BasePage):
 
     def switch_to_lead(self):
         self.click(self.locators.TAB_LEAD, 100)
+        

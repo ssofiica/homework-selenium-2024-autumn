@@ -61,5 +61,3 @@ class LeadformLocators(BasePageLocators):
     # Раздел "Настройки"
     INPUT_UR_FACE = (By.XPATH, "//input[@placeholder='Введите название']")
     INPUT_UR_ADDRESS = (By.XPATH, "//input[@placeholder='Введите адрес']")
-
-

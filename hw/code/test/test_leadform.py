@@ -1,5 +1,4 @@
 import datetime
-import time
 from test.base import BaseCase
 from ui.pages.leadfom import LeadformPage
 
@@ -48,7 +47,6 @@ class TestAudience(BaseCase):
         leadform_page.click_create_button()
         #оформление
         leadform_page.upload_logo()
-        time.sleep(1)
         leadform_page.fill_company_name(COMPANY_NAME)
         leadform_page.fill_title(TITLE)
         leadform_page.fill_description(DESCRIP)
@@ -65,7 +63,6 @@ class TestAudience(BaseCase):
         leadform_page.click_create_button()
         #оформление
         leadform_page.upload_logo()
-        time.sleep(1)
         leadform_page.fill_company_name(COMPANY_NAME)
         leadform_page.fill_title(TITLE)
         leadform_page.fill_description(DESCRIP)
@@ -81,7 +78,6 @@ class TestAudience(BaseCase):
         leadform_page.click_create_button()
         #оформление
         leadform_page.upload_logo()
-        time.sleep(1)
         leadform_page.fill_company_name(COMPANY_NAME)
         leadform_page.fill_title(TITLE)
         leadform_page.fill_description(DESCRIP)
@@ -97,7 +93,6 @@ class TestAudience(BaseCase):
         leadform_page.click_create_button()
         #оформление
         leadform_page.upload_logo()
-        time.sleep(1)
         leadform_page.fill_company_name(COMPANY_NAME)
         leadform_page.fill_title(TITLE)
         leadform_page.fill_description(DESCRIP)
@@ -114,7 +109,6 @@ class TestAudience(BaseCase):
         leadform_page.click_create_button()
         #оформление
         leadform_page.upload_logo()
-        time.sleep(1)
         leadform_page.fill_company_name(COMPANY_NAME)
         leadform_page.fill_title(TITLE)
         leadform_page.fill_description(DESCRIP)
@@ -136,7 +130,6 @@ class TestAudience(BaseCase):
         leadform_page.click_create_button()
         #оформление
         leadform_page.upload_logo()
-        time.sleep(1)
         leadform_page.fill_company_name(COMPANY_NAME)
         leadform_page.fill_title(TITLE)
         leadform_page.fill_description(DESCRIP)

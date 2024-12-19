@@ -76,3 +76,4 @@ class CampaignPage(BasePage):
     def click_delete(self):
         self.click(self.locators.DELETE_BUTTON)
         self.click(self.locators.ACCEPT_DELETE)
+        

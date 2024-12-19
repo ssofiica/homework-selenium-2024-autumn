@@ -6,6 +6,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.common.exceptions import ElementNotInteractableException
 from typing import List
 import time
 
@@ -51,9 +52,14 @@ class BasePage:
         elem.click()
 
     def fill(self, locator, text, timeout=None) -> WebElement:
-        elem = self.find(locator, timeout)
-        elem.clear()
-        elem.send_keys(text)
+        try:
+            elem = self.find(locator, timeout)
+            elem.clear()
+            elem.send_keys(text)
+        except ElementNotInteractableException:
+            elem = self.find(locator, timeout)
+            elem.clear()
+            elem.send_keys(text)
         return elem 
 
     def find_text(self, text):

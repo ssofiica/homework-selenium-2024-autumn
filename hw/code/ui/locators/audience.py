@@ -28,3 +28,4 @@ class AudienceLocators(BasePageLocators):
         By.XPATH,
         f'//h5[text()="{text}"]',
     )
+    

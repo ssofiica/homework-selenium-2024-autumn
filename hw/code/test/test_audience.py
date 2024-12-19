@@ -56,8 +56,8 @@ class TestAudience(BaseCase):
         formatted_date = today.strftime("%Y-%m-%d")
         name = NAME + formatted_date
         audience_page.select_audience(name) # выбор аудитории с нужным названием
-        audience_page.click_delete() # удаление аудитории
+        audience_page.click_delete()
         audience_page.select_users_tab()
         audience_page.select_aud_tab()
-        res = audience_page.find_audience(name, 5) # чек того, что его нет
+        res = audience_page.find_audience(name, 5) # чек того, что ее нет
         assert res is False

@@ -73,7 +73,7 @@ class CampaignPage(BasePage):
         checkbox = row.find_element(*self.locators.DRAFT_CHECKBOX)
         checkbox.click()
     
-    def click_delete(self):
+    def click_delete_selected(self):
         self.click(self.locators.DELETE_BUTTON)
         self.click(self.locators.ACCEPT_DELETE)
         

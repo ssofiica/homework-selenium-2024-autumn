@@ -62,7 +62,7 @@ class TestCampaign(BaseCase):
         name = NAME + formatted_date
         campaign_page.select_drafts() # переключение на кампании-черновики
         campaign_page.select_draft(name) # выбор черновика с нужным названием
-        campaign_page.click_delete()
+        campaign_page.click_delete_selected()
         campaign_page.select_all()
         campaign_page.select_drafts()
         res = campaign_page.find(CampaignLocators.DRAFT(self, name), 2) # чек того, что его нет
